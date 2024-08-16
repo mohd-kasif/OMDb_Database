@@ -20,6 +20,7 @@
 		4B76E6D92C6FDB53005D5C19 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6D82C6FDB53005D5C19 /* EndPoints.swift */; };
 		4B76E6DB2C6FDE80005D5C19 /* OMDbImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */; };
 		4B76E6DD2C6FDF31005D5C19 /* OmDbLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */; };
+		4B76E6DF2C6FEC8F005D5C19 /* HeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4B76E6D82C6FDB53005D5C19 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbImage.swift; sourceTree = "<group>"; };
 		4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmDbLabel.swift; sourceTree = "<group>"; };
+		4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				4B76E6D32C6FDAA6005D5C19 /* MovieCell.swift */,
 				4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */,
 				4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */,
+				4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B76E6D72C6FDAED005D5C19 /* NetworkLayer.swift in Sources */,
+				4B76E6DF2C6FEC8F005D5C19 /* HeaderVC.swift in Sources */,
 				4B76E6CF2C6FD8EA005D5C19 /* Constants.swift in Sources */,
 				4B76E6CC2C6FD8A8005D5C19 /* MovieModel.swift in Sources */,
 				4B76E6D42C6FDAA6005D5C19 /* MovieCell.swift in Sources */,

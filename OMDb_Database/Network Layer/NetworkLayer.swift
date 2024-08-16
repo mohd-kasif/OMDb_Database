@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-////https://www.omdbapi.com/?apikey=de089793&s=batman&page=2
+
 final class NetworkLayer{
     static let shared=NetworkLayer()
     var cache=NSCache<NSString, UIImage>()

@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     private var movieList:Movie=Movie(search: [], totalResults: "", response: "")
+    var searchController:UISearchController!
+    var header=HeaderVC(frame: .zero)
     var name:String="Spiderman"
     var collectionView:UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section, Search>!
@@ -21,15 +23,42 @@ class ViewController: UIViewController {
         
         configCollectionView()
         configDataSource()
-        getMovieList(name: name, page: page)
+//        getMovieList(name: name, page: page)
+        header.button.addTarget(self, action: #selector(search), for: .touchUpInside)
+    }
+    
+    @objc func search(){
+        guard let text=header.textField.text else {return}
+        if !text.isEmpty && text.count>3{
+            movieList.search.removeAll()
+            getMovieList(name: text, page: page)
+        }
     }
     
     func configCollectionView(){
         collectionView=UICollectionView(frame: view.bounds, collectionViewLayout: twoColumnLayOut())
+        collectionView.translatesAutoresizingMaskIntoConstraints=false
         view.addSubview(collectionView)
+        view.addSubview(header)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.resuseId)
         collectionView.delegate=self
+
+        //constraint
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            header.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            header.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+//            header.heightAnchor.constraint(equalToConstant: 60),
+            
+            collectionView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            
+            
+        ])
+        
     }
     
     
@@ -82,7 +111,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController:UICollectionViewDelegate{
+extension ViewController:UICollectionViewDelegate, UISearchBarDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell=movieList.search[indexPath.row]
         print(cell, "secledt row")
