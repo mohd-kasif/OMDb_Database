@@ -9,13 +9,16 @@ import Foundation
 
 //MARK: - Movie Search Model
 struct Movie:Codable,Hashable{
-    var search: [Search]
-    let totalResults, response: String
+    var search: [Search]?
+    let response: String
+    let totalResults:String?
+    let error:String?
 
     enum CodingKeys: String, CodingKey {
         case search = "Search"
         case totalResults
         case response = "Response"
+        case error="Error"
     }
 }
 
@@ -32,5 +35,24 @@ struct Search:Codable, Hashable{
         case imdbID
         case type = "Type"
         case poster = "Poster"
+    }
+}
+
+//MARK: - Movie Detail Model
+
+struct MovieDetailModel: Codable {
+    let title, released: String
+    let director: String
+    let plot: String
+    let poster: String
+    let imdbRating: String
+
+    enum CodingKeys: String, CodingKey {
+        case title = "Title"
+        case released = "Released"
+        case director = "Director"
+        case plot = "Plot"
+        case poster = "Poster"
+        case imdbRating
     }
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B76E6B52C6FD7A7005D5C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6B42C6FD7A7005D5C19 /* AppDelegate.swift */; };
 		4B76E6B72C6FD7A7005D5C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6B62C6FD7A7005D5C19 /* SceneDelegate.swift */; };
-		4B76E6B92C6FD7A7005D5C19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6B82C6FD7A7005D5C19 /* ViewController.swift */; };
+		4B76E6B92C6FD7A7005D5C19 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6B82C6FD7A7005D5C19 /* HomeVC.swift */; };
 		4B76E6BC2C6FD7A7005D5C19 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E6BB2C6FD7A7005D5C19 /* Base */; };
 		4B76E6BE2C6FD7A9005D5C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E6BD2C6FD7A9005D5C19 /* Assets.xcassets */; };
 		4B76E6C12C6FD7A9005D5C19 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E6C02C6FD7A9005D5C19 /* Base */; };
@@ -21,13 +21,20 @@
 		4B76E6DB2C6FDE80005D5C19 /* OMDbImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */; };
 		4B76E6DD2C6FDF31005D5C19 /* OmDbLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */; };
 		4B76E6DF2C6FEC8F005D5C19 /* HeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */; };
+		4B76E6E22C7002C8005D5C19 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6E12C7002C8005D5C19 /* UIViewController+Ext.swift */; };
+		4B76E6E52C700480005D5C19 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6E42C700480005D5C19 /* MovieDetailVC.swift */; };
+		4B76E6E72C70A6E3005D5C19 /* OMDbAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6E62C70A6E2005D5C19 /* OMDbAlert.swift */; };
+		4B76E6E92C70A729005D5C19 /* OMDbButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6E82C70A729005D5C19 /* OMDbButton.swift */; };
+		4B76E6EB2C70A79E005D5C19 /* OMDbBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6EA2C70A79E005D5C19 /* OMDbBodyLabel.swift */; };
+		4B76E6ED2C70A925005D5C19 /* OMDbTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6EC2C70A925005D5C19 /* OMDbTextField.swift */; };
+		4B76E6EF2C718A0D005D5C19 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6EE2C718A0D005D5C19 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B76E6B12C6FD7A7005D5C19 /* OMDb_Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDb_Database.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B76E6B42C6FD7A7005D5C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B76E6B62C6FD7A7005D5C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B76E6B82C6FD7A7005D5C19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B76E6B82C6FD7A7005D5C19 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4B76E6BB2C6FD7A7005D5C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B76E6BD2C6FD7A9005D5C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B76E6C02C6FD7A9005D5C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +47,13 @@
 		4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbImage.swift; sourceTree = "<group>"; };
 		4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmDbLabel.swift; sourceTree = "<group>"; };
 		4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderVC.swift; sourceTree = "<group>"; };
+		4B76E6E12C7002C8005D5C19 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		4B76E6E42C700480005D5C19 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
+		4B76E6E62C70A6E2005D5C19 /* OMDbAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbAlert.swift; sourceTree = "<group>"; };
+		4B76E6E82C70A729005D5C19 /* OMDbButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbButton.swift; sourceTree = "<group>"; };
+		4B76E6EA2C70A79E005D5C19 /* OMDbBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbBodyLabel.swift; sourceTree = "<group>"; };
+		4B76E6EC2C70A925005D5C19 /* OMDbTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbTextField.swift; sourceTree = "<group>"; };
+		4B76E6EE2C718A0D005D5C19 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +86,14 @@
 		4B76E6B32C6FD7A7005D5C19 /* OMDb_Database */ = {
 			isa = PBXGroup;
 			children = (
+				4B76E6E32C700458005D5C19 /* View Controller */,
+				4B76E6E02C7002B2005D5C19 /* Extensions */,
 				4B76E6D52C6FDAD9005D5C19 /* Network Layer */,
 				4B76E6D02C6FDA3F005D5C19 /* Custom Views */,
 				4B76E6CD2C6FD8DC005D5C19 /* Constants */,
 				4B76E6CA2C6FD867005D5C19 /* Models */,
 				4B76E6B42C6FD7A7005D5C19 /* AppDelegate.swift */,
 				4B76E6B62C6FD7A7005D5C19 /* SceneDelegate.swift */,
-				4B76E6B82C6FD7A7005D5C19 /* ViewController.swift */,
 				4B76E6BA2C6FD7A7005D5C19 /* Main.storyboard */,
 				4B76E6BD2C6FD7A9005D5C19 /* Assets.xcassets */,
 				4B76E6BF2C6FD7A9005D5C19 /* LaunchScreen.storyboard */,
@@ -110,6 +125,11 @@
 				4B76E6DA2C6FDE80005D5C19 /* OMDbImage.swift */,
 				4B76E6DC2C6FDF31005D5C19 /* OmDbLabel.swift */,
 				4B76E6DE2C6FEC8F005D5C19 /* HeaderVC.swift */,
+				4B76E6E62C70A6E2005D5C19 /* OMDbAlert.swift */,
+				4B76E6E82C70A729005D5C19 /* OMDbButton.swift */,
+				4B76E6EA2C70A79E005D5C19 /* OMDbBodyLabel.swift */,
+				4B76E6EC2C70A925005D5C19 /* OMDbTextField.swift */,
+				4B76E6EE2C718A0D005D5C19 /* RatingView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -121,6 +141,23 @@
 				4B76E6D82C6FDB53005D5C19 /* EndPoints.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		4B76E6E02C7002B2005D5C19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B76E6E12C7002C8005D5C19 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B76E6E32C700458005D5C19 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4B76E6B82C6FD7A7005D5C19 /* HomeVC.swift */,
+				4B76E6E42C700480005D5C19 /* MovieDetailVC.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,16 +231,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B76E6ED2C70A925005D5C19 /* OMDbTextField.swift in Sources */,
+				4B76E6E72C70A6E3005D5C19 /* OMDbAlert.swift in Sources */,
 				4B76E6D72C6FDAED005D5C19 /* NetworkLayer.swift in Sources */,
+				4B76E6EF2C718A0D005D5C19 /* RatingView.swift in Sources */,
 				4B76E6DF2C6FEC8F005D5C19 /* HeaderVC.swift in Sources */,
+				4B76E6E22C7002C8005D5C19 /* UIViewController+Ext.swift in Sources */,
 				4B76E6CF2C6FD8EA005D5C19 /* Constants.swift in Sources */,
 				4B76E6CC2C6FD8A8005D5C19 /* MovieModel.swift in Sources */,
+				4B76E6E52C700480005D5C19 /* MovieDetailVC.swift in Sources */,
 				4B76E6D42C6FDAA6005D5C19 /* MovieCell.swift in Sources */,
-				4B76E6B92C6FD7A7005D5C19 /* ViewController.swift in Sources */,
+				4B76E6B92C6FD7A7005D5C19 /* HomeVC.swift in Sources */,
+				4B76E6E92C70A729005D5C19 /* OMDbButton.swift in Sources */,
 				4B76E6DB2C6FDE80005D5C19 /* OMDbImage.swift in Sources */,
 				4B76E6B52C6FD7A7005D5C19 /* AppDelegate.swift in Sources */,
 				4B76E6D92C6FDB53005D5C19 /* EndPoints.swift in Sources */,
 				4B76E6DD2C6FDF31005D5C19 /* OmDbLabel.swift in Sources */,
+				4B76E6EB2C70A79E005D5C19 /* OMDbBodyLabel.swift in Sources */,
 				4B76E6B72C6FD7A7005D5C19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

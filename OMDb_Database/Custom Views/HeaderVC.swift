@@ -8,19 +8,8 @@
 import UIKit
 
 class HeaderVC: UIView {
-    lazy var button:UIButton={
-        let button=UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints=false
-        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        return button
-    }()
-    lazy var textField:UITextField={
-        let textField=UITextField(frame: .zero)
-        textField.placeholder="Enter movie name..."
-        textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints=false
-        return textField
-    }()
+    var button=OMDbButton(title: "Search", color: .systemPurple)
+    var textField=OMDbTextField(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,12 +31,13 @@ class HeaderVC: UIView {
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            textField.widthAnchor.constraint(equalToConstant: 50),
             
             button.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8),
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor),
             button.topAnchor.constraint(equalTo: topAnchor),
-            button.widthAnchor.constraint(equalToConstant: 44)
+            button.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
     
