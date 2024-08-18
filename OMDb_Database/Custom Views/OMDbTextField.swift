@@ -25,17 +25,15 @@ class OMDbTextField: UITextField {
         layer.borderColor=UIColor.systemGray4.cgColor
         textColor = .label
         tintColor = .label
-//        textAlignment = .left
         font=UIFont.preferredFont(forTextStyle: .headline)
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: frame.height))
         leftView=paddingView
         leftViewMode = .always
-//        adjustsFontSizeToFitWidth = true
         minimumFontSize=12
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
         placeholder="Enter movie name"
-        returnKeyType = .go
+        returnKeyType = .search
     }
 
 }

@@ -27,8 +27,10 @@ class MovieDetailVC: UIViewController {
     }
     init(imdbID:String){
         super.init(nibName: nil, bundle: nil)
+        showLoadingView()
         NetworkLayer.shared.fetchMoviewDetail(withID: imdbID) {[weak self] result in
             guard let self else {return}
+            dismissLoadingView()
             switch result {
             case .success(let detail):
                 DispatchQueue.main.async {
@@ -107,7 +109,7 @@ class MovieDetailVC: UIViewController {
             moviePoster.trailingAnchor.constraint(equalTo: moviePosterConatiner.trailingAnchor),
             moviePoster.bottomAnchor.constraint(equalTo: moviePosterConatiner.bottomAnchor),
             
-            moviePosterConatiner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            moviePosterConatiner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             moviePosterConatiner.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             moviePosterConatiner.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             moviePosterConatiner.heightAnchor.constraint(equalToConstant: 250),

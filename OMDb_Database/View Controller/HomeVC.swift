@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
     var collectionView:UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section, Search>!
     var page:Int=1
+    var hasMore:Bool=true
     var istextfiledEmpty:Bool{
         return !header.textField.text!.isEmpty
     }
@@ -109,7 +110,13 @@ class HomeVC: UIViewController {
             dismissLoadingView()
             switch result {
             case .success(let movieList):
+                if movieList.response=="False"{
+                    hasMore=false
+                    self.presentAlertMainThread(title: "Error", message: movieList.error ?? "", buttonTitle: "Ok")
+                    return
+                }
                 DispatchQueue.main.async {
+                    self.hasMore=true
                     self.movieList.search?.append(contentsOf: movieList.search ?? [])
                     self.updateData(movie: self.movieList.search ?? [])
                 }
@@ -152,6 +159,7 @@ extension HomeVC:UICollectionViewDelegate{
         let height=scrollView.frame.size.height
         
         if offsetY>contentHeight-height{
+            guard hasMore else {return}
             page += 1
             getMoreMoviewList()
         }

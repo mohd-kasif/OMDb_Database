@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - Movie Search Model
+//MARK: - Movie List Model
 struct Movie:Codable,Hashable{
     var search: [Search]?
     let response: String
@@ -39,7 +39,6 @@ struct Search:Codable, Hashable{
 }
 
 //MARK: - Movie Detail Model
-
 struct MovieDetailModel: Codable {
     let title, released: String
     let director: String
