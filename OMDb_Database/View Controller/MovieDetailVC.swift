@@ -18,6 +18,8 @@ class MovieDetailVC: UIViewController {
     var ratingView=RatingView(frame: .zero)
     var plotLabel=OmDbLabel(alignement: .left, fontSize: 20)
     var detailContainer=UIView()
+    var favButton=FavButton(frame: .zero)
+    var genreRuntimeView=Genre_RuntimeView(frame: .zero)
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -27,22 +29,7 @@ class MovieDetailVC: UIViewController {
     }
     init(imdbID:String){
         super.init(nibName: nil, bundle: nil)
-        showLoadingView()
-        NetworkLayer.shared.fetchMoviewDetail(withID: imdbID) {[weak self] result in
-            guard let self else {return}
-            dismissLoadingView()
-            switch result {
-            case .success(let detail):
-                DispatchQueue.main.async {
-                    self.movieDetail=detail
-                    self.configUI(withDetail: self.movieDetail)
-                    print(detail)
-                }
-            case .failure(let failure):
-                print(failure, "error in moview detail")
-            }
-        }
-        
+        getMovieDetail(withID: imdbID)
     }
     
     func setupDetailView(){
@@ -51,10 +38,10 @@ class MovieDetailVC: UIViewController {
         view.addSubview(detailContainer)
         detailContainer.addSubview(movieTitle)
         detailContainer.addSubview(ratingView)
-        detailContainer.addSubview(releaseDate)
-        detailContainer.addSubview(director)
         detailContainer.addSubview(plotLabel)
         detailContainer.addSubview(plot)
+        detailContainer.addSubview(genreRuntimeView)
+        detailContainer.addSubview(favButton)
         
         let padding:CGFloat=20
         
@@ -66,20 +53,21 @@ class MovieDetailVC: UIViewController {
             
             movieTitle.topAnchor.constraint(equalTo: detailContainer.topAnchor, constant: 20),
             movieTitle.leadingAnchor.constraint(equalTo: detailContainer.leadingAnchor),
-            movieTitle.trailingAnchor.constraint(lessThanOrEqualTo: ratingView.leadingAnchor, constant: -10),
+            movieTitle.trailingAnchor.constraint(lessThanOrEqualTo: detailContainer.trailingAnchor, constant: -10),
             
-            ratingView.centerYAnchor.constraint(equalTo: movieTitle.centerYAnchor),
+            genreRuntimeView.topAnchor.constraint(equalTo: movieTitle.bottomAnchor, constant: 10),
+            genreRuntimeView.leadingAnchor.constraint(equalTo: detailContainer.leadingAnchor),
+            
+            favButton.centerYAnchor.constraint(equalTo: genreRuntimeView.centerYAnchor),
+            favButton.leadingAnchor.constraint(equalTo: genreRuntimeView.trailingAnchor, constant: 10),
+            favButton.trailingAnchor.constraint(equalTo: ratingView.leadingAnchor, constant: -10),
+            
+            ratingView.centerYAnchor.constraint(equalTo: favButton.centerYAnchor),
             ratingView.trailingAnchor.constraint(equalTo: detailContainer.trailingAnchor),
             ratingView.widthAnchor.constraint(equalToConstant: 60),
             ratingView.heightAnchor.constraint(equalToConstant: 30),
             
-            releaseDate.topAnchor.constraint(equalTo: movieTitle.bottomAnchor, constant: 10),
-            releaseDate.leadingAnchor.constraint(equalTo: detailContainer.leadingAnchor),
-            
-            director.topAnchor.constraint(equalTo: releaseDate.bottomAnchor, constant: 10),
-            director.leadingAnchor.constraint(equalTo: detailContainer.leadingAnchor),
-            
-            plotLabel.topAnchor.constraint(equalTo: director.bottomAnchor, constant: 10),
+            plotLabel.topAnchor.constraint(equalTo: genreRuntimeView.bottomAnchor, constant: 10),
             plotLabel.leadingAnchor.constraint(equalTo: detailContainer.leadingAnchor),
             
             plot.topAnchor.constraint(equalTo: plotLabel.bottomAnchor, constant: 5),
@@ -118,12 +106,29 @@ class MovieDetailVC: UIViewController {
         ])
     }
     
+    func getMovieDetail(withID imdbID:String){
+        showLoadingView()
+        NetworkLayer.shared.fetchMoviewDetail(withID: imdbID) {[weak self] result in
+            guard let self else {return}
+            dismissLoadingView()
+            switch result {
+            case .success(let detail):
+                DispatchQueue.main.async {
+                    self.movieDetail=detail
+                    self.configUI(withDetail: self.movieDetail)
+                }
+            case .failure(let failure):
+                print(failure, "error in moview detail")
+            }
+        }
+    }
+    
     func configUI(withDetail detail:MovieDetailModel){
         moviePoster.downloadImage(url: detail.poster)
-        movieTitle.text=detail.title
+        movieTitle.text=detail.title+" ("+"\(detail.year)"+")"
+        genreRuntimeView.genreLabel.text=detail.genre
+        genreRuntimeView.runtimeLabel.text=detail.runtime.timeHour()
         ratingView.ratingLabel.text=detail.imdbRating
-        releaseDate.text="Release Date:- \(detail.released)"
-        director.text="Director:- \(detail.director)"
         plot.text=detail.plot
     }
     

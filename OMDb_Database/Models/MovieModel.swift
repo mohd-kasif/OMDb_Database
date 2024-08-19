@@ -45,6 +45,8 @@ struct MovieDetailModel: Codable {
     let plot: String
     let poster: String
     let imdbRating: String
+    let metascore: String
+    let runtime, genre, year: String
 
     enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -53,5 +55,9 @@ struct MovieDetailModel: Codable {
         case plot = "Plot"
         case poster = "Poster"
         case imdbRating
+        case metascore = "Metascore"
+        case runtime = "Runtime"
+        case genre = "Genre"
+        case year = "Year"
     }
 }

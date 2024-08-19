@@ -27,10 +27,11 @@ class RatingView: UIView {
         layer.cornerRadius = 3
         layer.borderColor = UIColor.systemGray4.cgColor
         layer.borderWidth = 1.0
-        backgroundColor = .systemPurple.withAlphaComponent(0.4)
+        backgroundColor = .systemYellow.withAlphaComponent(0.8)
 
         starImageView.translatesAutoresizingMaskIntoConstraints = false
-        starImageView.tintColor = .systemYellow
+        starImageView.tintColor = .black.withAlphaComponent(0.6)
+        ratingLabel.textColor = .black
         addSubview(starImageView)
 
         addSubview(ratingLabel)

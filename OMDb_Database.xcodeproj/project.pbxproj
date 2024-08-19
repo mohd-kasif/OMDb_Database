@@ -30,6 +30,9 @@
 		4B76E6EF2C718A0D005D5C19 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6EE2C718A0D005D5C19 /* RatingView.swift */; };
 		4B76E6F32C71B59C005D5C19 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E6F22C71B59C005D5C19 /* image.jpg */; };
 		4B76E6F52C71B5CA005D5C19 /* image (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E6F42C71B5CA005D5C19 /* image (2).jpg */; };
+		4B76E6F82C7357BD005D5C19 /* Genre+RuntimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6F72C7357BD005D5C19 /* Genre+RuntimeView.swift */; };
+		4B76E6FA2C735B1E005D5C19 /* String+Extn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6F92C735B1E005D5C19 /* String+Extn.swift */; };
+		4B76E6FC2C735E65005D5C19 /* FavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E6FB2C735E65005D5C19 /* FavButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		4B76E6F02C71B319005D5C19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B76E6F22C71B59C005D5C19 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		4B76E6F42C71B5CA005D5C19 /* image (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image (2).jpg"; sourceTree = "<group>"; };
+		4B76E6F72C7357BD005D5C19 /* Genre+RuntimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Genre+RuntimeView.swift"; sourceTree = "<group>"; };
+		4B76E6F92C735B1E005D5C19 /* String+Extn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extn.swift"; sourceTree = "<group>"; };
+		4B76E6FB2C735E65005D5C19 /* FavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,8 @@
 				4B76E6EA2C70A79E005D5C19 /* OMDbBodyLabel.swift */,
 				4B76E6EC2C70A925005D5C19 /* OMDbTextField.swift */,
 				4B76E6EE2C718A0D005D5C19 /* RatingView.swift */,
+				4B76E6F72C7357BD005D5C19 /* Genre+RuntimeView.swift */,
+				4B76E6FB2C735E65005D5C19 /* FavButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4B76E6E12C7002C8005D5C19 /* UIViewController+Ext.swift */,
+				4B76E6F92C735B1E005D5C19 /* String+Extn.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				4B76E6ED2C70A925005D5C19 /* OMDbTextField.swift in Sources */,
 				4B76E6E72C70A6E3005D5C19 /* OMDbAlert.swift in Sources */,
 				4B76E6D72C6FDAED005D5C19 /* NetworkLayer.swift in Sources */,
+				4B76E6F82C7357BD005D5C19 /* Genre+RuntimeView.swift in Sources */,
 				4B76E6EF2C718A0D005D5C19 /* RatingView.swift in Sources */,
 				4B76E6DF2C6FEC8F005D5C19 /* HeaderVC.swift in Sources */,
 				4B76E6E22C7002C8005D5C19 /* UIViewController+Ext.swift in Sources */,
@@ -259,8 +269,10 @@
 				4B76E6CC2C6FD8A8005D5C19 /* MovieModel.swift in Sources */,
 				4B76E6E52C700480005D5C19 /* MovieDetailVC.swift in Sources */,
 				4B76E6D42C6FDAA6005D5C19 /* MovieCell.swift in Sources */,
+				4B76E6FC2C735E65005D5C19 /* FavButton.swift in Sources */,
 				4B76E6B92C6FD7A7005D5C19 /* HomeVC.swift in Sources */,
 				4B76E6E92C70A729005D5C19 /* OMDbButton.swift in Sources */,
+				4B76E6FA2C735B1E005D5C19 /* String+Extn.swift in Sources */,
 				4B76E6DB2C6FDE80005D5C19 /* OMDbImage.swift in Sources */,
 				4B76E6B52C6FD7A7005D5C19 /* AppDelegate.swift in Sources */,
 				4B76E6D92C6FDB53005D5C19 /* EndPoints.swift in Sources */,
